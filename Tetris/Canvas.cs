@@ -1,6 +1,4 @@
 ﻿using static Tetris.Brick;
-using static Tetris.Score;
-
 
 namespace Tetris
 {
@@ -16,17 +14,24 @@ namespace Tetris
         private int cube_width;                         // 组成砖块的方块宽度
         private Random random = new Random();           // 用于生成随机砖块
         private SolidBrush brushColor;
-        public int score = 0;
+
+        public int showScore = 0;
+        private Score score; // score实例
+
+        // Score score=new Score();
+        // public int score = 0;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="game_panel"></param>
         /// <param name="canvas_size"></param>
-        public Canvas (Image game_panel, Size canvas_size)
+        public Canvas (Image game_panel, Size canvas_size,Score score)
         {
             // 保存游戏绘图面板实例
             this.panel_image = game_panel;
+
+            this.score = score;
 
             // 初始化画布抽象状态数组
             canvas_data = new int[canvas_size.Height, canvas_size.Width];
@@ -153,10 +158,10 @@ namespace Tetris
             }
         }
 
-        public int addScore()
+        public void addScore()
         {
-            score += 10;
-            return score;
+            score.addScore();
+            //score += 10;
         }
 
         /// <summary>
@@ -237,6 +242,8 @@ namespace Tetris
         /// <returns>如果没有空间生成新砖块，则返回false，否则返回true</returns>
         private bool NextBrick()
         {
+            this.addScore();  // TODO:release删掉这行
+
             // 将砖块合并到画布
             for (int i = 0; i < brick_current.Data.GetLength(0); i++)
             {

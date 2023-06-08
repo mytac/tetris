@@ -5,15 +5,17 @@ namespace Tetris
 {
     public partial class FormMain : Form
     {
-        Canvas canvas;      
-
-        /// <summary>
-        /// </summary>
+        Canvas canvas;
+        private Score score;
+        private int speed = 1000;
         public FormMain()
         {
+            score=new Score();
             InitializeComponent();
             game_panel.Image = new Bitmap(game_panel.Width, game_panel.Height);
-            canvas = new Canvas(game_panel.Image, new Size(20, 25));
+            canvas = new Canvas(game_panel.Image, new Size(20, 25), score);
+            levelText.Text = score.level.ToString();
+            timer.Interval = speed;
         }
 
 
@@ -28,6 +30,20 @@ namespace Tetris
            // game_panel.Image = new Bitmap(game_panel.Width, game_panel.Height);
         }
 
+        private void renderLeft()
+        {
+            textBox1.Text = score.score.ToString(); // 渲染分数
+            levelText.Text = score.level.ToString(); // 渲染关卡
+            if (!score.speed.Equals(this.speed))
+            {
+                timer.Stop();
+                timer.Interval = score.speed;
+                timer.Start();
+
+            }
+            Console.WriteLine(score.speed.ToString());
+        }
+
      
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -38,7 +54,7 @@ namespace Tetris
             }
 
             game_panel.Refresh();
-            textBox1.Text=canvas.score.ToString();
+            renderLeft();
         }
 
        
@@ -97,26 +113,5 @@ namespace Tetris
 
         }
 
-        private void radioButton1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
-            {
-                e.Handled = true; // 禁止自动选择
-            }
-        }
-        private void radioButton2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
-            {
-                e.Handled = true; // 禁止自动选择
-            }
-        }
-        private void radioButton3_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
-            {
-                e.Handled = true; // 禁止自动选择
-            }
-        }
     }
 }

@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.level = new System.Windows.Forms.Label();
+            this.levelText = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.game_panel)).BeginInit();
@@ -100,16 +100,15 @@
             this.label3.Text = "关卡：";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // level
+            // levelText
             // 
-            this.level.AutoSize = true;
-            this.level.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.level.Location = new System.Drawing.Point(585, 48);
-            this.level.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.level.Name = "level";
-            this.level.Size = new System.Drawing.Size(28, 31);
-            this.level.TabIndex = 5;
-            this.level.Text = "1";
+            this.levelText.AutoSize = true;
+            this.levelText.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.levelText.Location = new System.Drawing.Point(585, 48);
+            this.levelText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.levelText.Name = "levelText";
+            this.levelText.Size = new System.Drawing.Size(0, 31);
+            this.levelText.TabIndex = 5;
             // 
             // label4
             // 
@@ -144,7 +143,7 @@
             this.ClientSize = new System.Drawing.Size(725, 622);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.level);
+            this.Controls.Add(this.levelText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -171,7 +170,7 @@
         private Label label2;
         private TextBox textBox1;
         private Label label3;
-        private Label level;
+        private Label levelText;
         private Label label4;
         private ComboBox comboBox1;
     }

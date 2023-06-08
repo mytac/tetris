@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    internal class Score
+    public class Score
     {
         // speed*=level*hardLevel
 
@@ -16,7 +16,9 @@ namespace Tetris
         public int award = 10; // 每消除一行得多少分，随关卡变化   award=10*hardLevel*level
         public int level = 1;
 
-        private int threshold=100; // 进阶阈值  threshold*=2**level
+        private int threshold=1; // 进阶阈值  threshold*=2**level
+        public int speed = 1000; // 下落速度
+        // private int threshold=100; // 进阶阈值  threshold*=2**level
 
         public void setHardLevel(int hardLevel) // 游戏初始化时调用
         {
@@ -41,6 +43,8 @@ namespace Tetris
                 this.level += 1;
                 this.threshold *= Convert.ToInt32(level*0.8);
                 this.award = 10 * hardLevel * level;
+                int targetSpeed= 1000 - hardLevel * level * 120;
+                this.speed = targetSpeed < 0 ? 10 : targetSpeed;
             }
         }
 
@@ -53,10 +57,7 @@ namespace Tetris
             return score;
         }
 
-        public int getSpeedRatio() // 当前下落速率倍数
-        {
-            return level * hardLevel;
-        }
+   
 
     }
 }
