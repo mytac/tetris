@@ -34,10 +34,11 @@ namespace Tetris
         {
             textBox1.Text = score.score.ToString(); // 渲染分数
             levelText.Text = score.level.ToString(); // 渲染关卡
-            if (!score.speed.Equals(this.speed))
+            if (!score.speed.Equals(this.speed)) // 关卡更新
             {
                 timer.Stop();
                 timer.Interval = score.speed;
+                this.speed = score.speed;
                 timer.Start();
 
             }
@@ -101,6 +102,7 @@ namespace Tetris
 
             // ������ʾ��Ϸ����
             MessageBox.Show("游戏结束", "��Ϣ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            score.reset();
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -20,6 +20,14 @@ namespace Tetris
         public int speed = 1000; // 下落速度
         // private int threshold=100; // 进阶阈值  threshold*=2**level
 
+        public void reset()
+        {
+            score=0;
+            award=0;
+            level = 1;
+            threshold = 1;
+            speed = 1000;
+        }
         public void setHardLevel(int hardLevel) // 游戏初始化时调用
         {
             if (hardLevel<1)
