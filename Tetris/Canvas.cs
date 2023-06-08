@@ -1,4 +1,5 @@
 ﻿using static Tetris.Brick;
+using static Tetris.Score;
 
 
 namespace Tetris

@@ -5,29 +5,20 @@ namespace Tetris
 {
     public partial class FormMain : Form
     {
-        Canvas canvas;      // ��Ϸ����ʵ��
+        Canvas canvas;      
 
         /// <summary>
-        /// ���캯��
         /// </summary>
         public FormMain()
         {
             InitializeComponent();
-
-            // ��ʼ����Ϸ������������Ϸ�����й���
             game_panel.Image = new Bitmap(game_panel.Width, game_panel.Height);
             canvas = new Canvas(game_panel.Image, new Size(20, 25));
-            //canvas = new Canvas(game_panel.Image, new Size(20, 25));
         }
 
-        /// <summary>
-        /// �¼���������������
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // ������Ϸ
             StartGame();
         }
 
@@ -37,31 +28,20 @@ namespace Tetris
            // game_panel.Image = new Bitmap(game_panel.Width, game_panel.Height);
         }
 
-        /// <summary>
-        /// �¼�������ʱ����ʱ
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+     
         private void timer_Tick(object sender, EventArgs e)
         {
-            // ��Ϸ���һ������
             if (!canvas.Tick())
             {
-                // ��Ϸ������������ʾ��������Ϸ
                 StopGame();
                 StartGame();
             }
 
-            // ˢ����Ϸ�����ʾ
             game_panel.Refresh();
             textBox1.Text=canvas.score.ToString();
         }
 
-        /// <summary>
-        /// �¼�������Ӧ���̲���
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+       
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -81,7 +61,6 @@ namespace Tetris
                 case Keys.Down:
                     if (!canvas.BrickMove(DIRECTION.Down))
                     {
-                        // ��Ϸ������������ʾ��������Ϸ
                         StopGame();
                         StartGame();
                     }
@@ -90,33 +69,54 @@ namespace Tetris
             }
         }
 
-        /// <summary>
-        /// ��������������Ϸ
-        /// </summary>
+
         private void StartGame()
         {
-            // ������Ϸ
             canvas.StartGame();
 
-            // ������ʱ��
             timer.Start();
         }
 
-        /// <summary>
-        /// ����������Ϸ����
-        /// </summary>
+
         private void StopGame()
         {
             // ֹͣ��ʱ��
             timer.Stop();
 
             // ������ʾ��Ϸ����
-            MessageBox.Show("��Ϸ������������ȷ������ť���¿�ʼ��Ϸ��", "��Ϣ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("游戏结束", "��Ϣ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                e.Handled = true; // 禁止自动选择
+            }
+        }
+        private void radioButton2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                e.Handled = true; // 禁止自动选择
+            }
+        }
+        private void radioButton3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                e.Handled = true; // 禁止自动选择
+            }
         }
     }
 }
