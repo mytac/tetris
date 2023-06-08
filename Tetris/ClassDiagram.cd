@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Tetris.Brick">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Tetris.Brick.DIRECTION">
+        <TypeIdentifier>
+          <NewMemberFileName>Brick.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAIAAAAQAAAIAAAACEAAAABAAAAACAAAAEAA=</HashCode>
+      <FileName>Brick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickLRType">
+    <Position X="17.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickLRType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickLType">
+    <Position X="15.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickLType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickOneType">
+    <Position X="13.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickOneType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickSquare">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickSquare.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickTType">
+    <Position X="15.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickTType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickZRType">
+    <Position X="13.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickZRType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.BrickZType">
+    <Position X="11.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickZType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.Canvas">
+    <Position X="16.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAACAgAAAAJAAAAMAAAQAAgAACAAAAAAAQAAAAIQAI=</HashCode>
+      <FileName>Canvas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.FormMain">
+    <Position X="11.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgACAAAAAAAASAAAAiAAAAAAhAAAAAAAAIAAA=</HashCode>
+      <FileName>FormMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.Program">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

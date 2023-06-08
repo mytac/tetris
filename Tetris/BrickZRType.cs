@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Tetris
+{
+    public class BrickZRType : Brick
+    {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="canvas_data"></param>
+        public BrickZRType(int[,] canvas_data) : base(canvas_data)
+        {
+            // 初始化反Z字形砖块数据
+            brick_data = new int[,] { { 0, 1, 1 },
+                                      { 1, 1, 0 },
+                                      { 0, 0, 0} };
+
+            // 定义反Z字形砖块初始位置
+            location = new Point((canvas_data.GetLength(1) - 3) / 2, 0);
+        }
+    }
+}
